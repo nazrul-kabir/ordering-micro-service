@@ -61,7 +61,7 @@ public class OrderServiceImpl implements OrderService{
             throw new ValidationException("Product doesn't exists");
         }
         //Check stock of the product
-        if(productFromAPI.getCurrentStock() > order.getQuantity()){
+        if(order.getQuantity() > productFromAPI.getCurrentStock()){
             throw new ValidationException("Not enough stock");
         }
     }
